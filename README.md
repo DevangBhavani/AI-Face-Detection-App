@@ -1,2 +1,0 @@
-# AI-Face-Detection-App
-.
