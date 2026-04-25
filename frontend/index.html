@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Face Detection App</title>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1>AI Face Detection</h1>
+            <p>Real-time webcam tracking & image analysis powered by OpenCV</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Webcam Section -->
+            <section class="card webcam-section">
+                <h2>Live Webcam</h2>
+                <div class="video-wrapper">
+                    <video id="webcam-video" autoplay playsinline></video>
+                    <canvas id="webcam-canvas"></canvas>
+                    <div id="webcam-overlay" class="overlay">
+                        <span>Camera is inactive</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="btn-start" class="btn primary">Start Camera</button>
+                    <button id="btn-stop" class="btn danger" disabled>Stop Camera</button>
+                </div>
+                
+                <div class="stats">
+                    Faces detected: <span id="webcam-faces-count">0</span>
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section class="card upload-section">
+                <h2>Image Upload</h2>
+                <div class="upload-wrapper" id="upload-wrapper">
+                    <img id="upload-preview" style="display:none;" />
+                    <div id="upload-placeholder" class="overlay">
+                        <span>Click to upload image</span>
+                        <input type="file" id="image-input" accept="image/*" hidden>
+                    </div>
+                    <div id="loading-indicator" class="loading hidden">
+                        <div class="spinner"></div>
+                        <span>Processing...</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="btn-upload" class="btn primary">Select Image</button>
+                </div>
+                
+                <div class="stats">
+                    Faces detected: <span id="upload-faces-count">0</span>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            Built with Flask, OpenCV, and modern web tech.
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
